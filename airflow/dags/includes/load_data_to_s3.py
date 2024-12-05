@@ -1,22 +1,40 @@
-# Import the necesary LIbraries and Packages
-import pandas as pd
 import awswrangler as wr
-import boto3
+
+from dags.includes.get_data import get_data
+from dags.includes.aws import session
+
+# from includes.aws import session
+# from includes.get_data import get_data
 
 
-def load_data_to_s3():
+def upload_to_s3():
     """
-    This function loads data into Amazon s3
-    
+    Uploads a pandas dataframe to an s3 bucket using AWS Wrangler.
+
+    :param data: pandas DataFrame to upload
+    :param bucket_name: Name of the S3 bucket
+    :param file_key: Path/key for the file in the bucket
     """
-    session = boto3.Session(
-        aws_access_key_id=Variable.get('access_key')
+
+    # creating a variable to save outr extraxted data
+    data = get_data()
+
+    # Verify that the dataFrame is not empty
+    if data.empty:
+        print("The DataFrame is empty. No data to upload.")
+        return
+
+    bucket_name = "s3://chisomnwa-bucket"
+    file_key = "raw_data.parquet"
+
+    # Upload the Dataframe as a Parquet file to s3
+    wr.s3.to_parquet(
+        df=data,
+        path=f"{bucket_name}/{file_key}",
+        index=False,
+        boto3_session=session(),
+        dataset=True,
+        mode='overwrite'
     )
 
-
-    session = boto3.Session(
-        aws_access_key_id=Variable.get('access_key'),
-        aws_secret_access_key=Variable.get('secret_key'),
-        region_name='eu-central-1'
-    ) # A session stores your configuration state and allows you 
-      # to create  service clients and resources. innit?
+    print(f"Data Successfully uploaded to {bucket_name}/{file_key}")
