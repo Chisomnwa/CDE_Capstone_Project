@@ -1,6 +1,6 @@
 import boto3
-from airflow.models import Variable
 
+from airflow.models import Variable
 
 def session():
     session = boto3.Session(
