@@ -21,12 +21,10 @@ def get_data():
         return profiles_data
     else:
         logging.error(f"Failed to fetch data. Status code: {response.status_code}")
-        return data
+        #return data
 
-# Print the data or DataFrame
+# # Print the data or DataFrame
 # data_frame = get_data()
 # if data_frame is not None:
 #     print(data_frame.head())  # Display the first few rows of the DataFrame
-
-
-
+print(get_data())
