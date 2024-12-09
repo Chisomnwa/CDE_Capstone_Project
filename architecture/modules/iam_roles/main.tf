@@ -1,5 +1,5 @@
 resource "aws_iam_role" "redshift_role" {
-  name = "redshift_role"
+  name = var.redshift_role_arn
 
   # Terraform's "jsonencode" function converts a
   # Terraform expression result to valid JSON syntax.
