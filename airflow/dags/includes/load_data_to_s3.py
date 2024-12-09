@@ -1,8 +1,8 @@
 import awswrangler as wr
 
-from get_data import get_data
-from aws import session
-import logging
+# from includes.get_data import get_data
+from includes.get_data import get_data
+from includes.aws import session
 
 
 def upload_to_s3():

@@ -1,4 +1,4 @@
-CREATE TABLE public.countries_table (
+CREATE TABLE public.countries_data_table (
     country_name VARCHAR(255),
     independence BOOLEAN,
     un_member BOOLEAN,

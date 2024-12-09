@@ -5,9 +5,12 @@ import awswrangler as wr
 
 from airflow.models import Variable
 
-from transformed_data import get_country_data
+from includes.transformed_data import get_country_data
 
-def write_to_redshif(data: pd.DataFrame, schema: str, table_name: str):
+# write_to_redshift(data: pd.DataFrame, schema: str, table_name: str):
+data = get_country_data()
+
+def write_to_redshift(data, schema="public", table_name="countries_data_table"):
     """
     Write a Pandas DataFrame to Amazon Redshift.
 
@@ -16,7 +19,6 @@ def write_to_redshif(data: pd.DataFrame, schema: str, table_name: str):
     :param table:name: Table name in Redshift
     """
 
-    data = get_country_data()
     # Verify that the DataFrame is not empty
     if data.empty:
         print("The DataFrame is empty. No data to write to Redshift.")
