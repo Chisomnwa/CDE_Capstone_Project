@@ -6,3 +6,4 @@ variable "redshift_role_arn" {
   description = "The ARN of the Redshift role"
   type        = string
 }
+
