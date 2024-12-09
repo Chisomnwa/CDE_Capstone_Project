@@ -5,3 +5,13 @@
 #     region = "eu-central-1"
 #   }
 # }
+
+# Create a backend state file
+terraform {
+  backend "s3" {
+    bucket  = "chisomnwa-travel-agency-backend-bucket"
+    key     = "terraform.tfstate"
+    region  = "eu-central-1"
+    encrypt = true
+  }
+}
