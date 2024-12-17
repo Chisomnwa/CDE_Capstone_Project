@@ -1,14 +1,36 @@
-# CDE Capstone Project
+# Travel Agency Data Platform Project
+
+### This project is not complete yet.
 
 # Introduction
-This project automates the deployment of a data pipeline integrating **AWS Redshift** for data storage, **Apache Airflow** for orchestration, and **dbt** for data transformation. Infrastructure provisioning is managed with **Terraform** to ensure scalable and replicable deployments. This pipeline processes raw data from an **S3 bucket**, transforms it using dbt, and stores it in Redshift for downstream analytics.
+In response to the **CDE cohort-1** capstone project requirement, I created this project which integrates all the key concepts and tools learned during the Bootcamp program.
 
-## Goals:
-* Automate infrastructure provisioning.
+The project demonstrates the development of a robust Data Platform capable of ingesting, transforming, and storing data for predictive analytics, with **Docker**, **Airflow**, **Terraform**, **AWS** (Amazon S3, Amazon Redshift), and **dbt** at its core.
 
-* Enable efficient ETL workflows using Airflow.
+# Overview
 
-* Provide analytics-ready data in Redshift.
+The goal of this project is to build a scalable and efficient data pipeline for the travel agency, enabling their Data Science team to analyze curated data for predictive analytics. The pipeline is designed to:
+
+* Extract raw data from the Country [REST API](https://restcountries.com/v3.1/all).
+
+* Load the data into an AWS S3 Data Lake in Parquet format as the Raw layer.
+
+* Transform the data into a curated dataset containing specific fields relevant for analysis and load it into Amazon Redshift.
+
+* Use dbt to model the data into Fact and Dimension tables for efficient querying.
+
+* This project incorporates CI/CD pipelines to automate code quality checks, build processes, and deployments, ensuring best practices and streamlined workflows.
+
+# Methodology
+
+Now, to the methodoly I used to complete this project.
+
+* I extracted the entire dataset from the Country REST API.
+
+* I stored raw data in AWS S3 in Parquet format for future extensibility.
+
+* I selected and transformed fields required by the Data Science team.
+
 
 # Project Architecture
 ## Overview
