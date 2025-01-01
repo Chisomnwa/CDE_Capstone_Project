@@ -1,3 +1,5 @@
+# define reusable resources
+
 locals {
   RESOURCE_PREFIX = "travel_agency"
   VPC_NAME        = "${local.RESOURCE_PREFIX}-vpc"
@@ -16,25 +18,24 @@ module "s3" {
 
 module "roles" {
   source     = "./modules/iam_roles"
-  redshift_role_arn = module.iam_roles.output.redshift_role_arn
+  redshift_role_arn = module.roles.redshift_role_arn
 }
 
 module "redshift" {
   source              = "./modules/redshift"
   redshift_subnet_group = module.vpc.subnet_group_id
   redshift_role_arn   = module.roles.redshift_iam_role_arn 
-  username            = module.redshift.var.username
-  password            = var.password
-  database_name       = var.database_name
-  cluster_identifier  =  module.redshift.aws_redshift_cluster.travel_agency_cluster
+  username            = var.redshift.username
+  password            = var.redshift.password
+  database_name       = var.redshift.database_name
+  cluster_identifier  = var.redshift.cluster_identifier
 }
 
 #  ecr_name =  "${local.RESOURCE_PREFIX}-ecr"
 module "ecr" {
   source   = "./modules/ecr"
-  ecr_name =  modules.ecr
+  ecr_name =  "${local.RESOURCE_PREFIX}-ecr"
 }
-
 # module "rds" {
 #   source          = "./modules/rds"
 #   vpc_name        = "${local.RESOURCE_PREFIX}-vpc"
