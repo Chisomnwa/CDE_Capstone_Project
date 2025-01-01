@@ -6,7 +6,7 @@
 #   }
 # }
 
-# Create a backend state file
+# Create a backend bucket for storing state file
 terraform {
   backend "s3" {
     bucket  = "chisomnwa-travel-agency-backend-bucket"
