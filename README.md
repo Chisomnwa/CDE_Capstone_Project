@@ -10,6 +10,7 @@ The project demonstrates the development of a robust Data Platform capable of in
 The goal of this project is to build a scalable and efficient data pipeline for the travel agency, enabling their Data Science team to analyze curated data for predictive analytics. The pipeline is designed to:
 
 * Extract raw data from the Country [REST API](https://restcountries.com/v3.1/all).
+ **Meanwhile, this API isn't responding anymore when you want to download the data from it.**
 
 * Load the data into an AWS S3 Data Lake in Parquet format as the Raw layer.
 
