@@ -8,3 +8,4 @@ my_venv
 **__init__.py**
 **terraform**
 my_venv/
+airflow/
