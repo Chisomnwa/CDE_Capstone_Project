@@ -1,0 +1,6 @@
+# These are necessary packages for the travel_agency_appto run
+
+apache-airflow==2.10.5       # For using Airflow’s Variable module to manage configuration values. 
+boto3==1.36.18               # For interacting with AWS services like S3.
+pandas==2.2.3                # For data manipulation and transformation
+requests==2.32.3             # For making HTTP requests to APIs.
