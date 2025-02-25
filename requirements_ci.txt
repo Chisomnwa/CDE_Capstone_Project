@@ -1,0 +1,4 @@
+# These are the necessary packages that are needed in ci.yaml file (for continous integration.
+
+flake8==7.1.2
+isort==6.0.0
