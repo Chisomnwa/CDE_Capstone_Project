@@ -24,17 +24,11 @@ The goal of this project is to build a scalable and efficient data pipeline for 
 
 ## Methodology
 
-Now, to the methodoly used to complete this project.
-
-* **Docker** was used to host **Airflow**, which is the orchestration tool used in this project.
-
-* The entire dataset was extacted from the Country REST API and stored in parquet format in **Amazon S3** for future extensibility.
-
-* The revelant columns were extracted from the raw data and loaded into a **Redshift** table whci was used as the Data Warehouse/Database.
-
-* **dbt** was used to model the transformed dta into Fact and Dimension tables.
-
-* **Terraform** was used as an Infrastructure as Code to provision all the resources used in AWS.
+Having carefully assessed the requirements, **Docker** was used to host **Airflow*, which served as the orchestration tool for this project. 
+The dataset was extracted from the Country REST API and stored in Parquet format in **Amazon S3**  to ensure future extensibility. 
+Relevant columns were then selected from the raw data and loaded into a **Redshift**  table,
+which functioned as the Data Warehouse. **dbt** was utilized to model the transformed data into `Fact` and `Dimension tables`, enabling efficient querying. 
+Additionally, **Terraform** was employed as an Infrastructure as Code (IaC) tool to provision all necessary AWS resources.
 
 ## Project Architecture
 ### Overview
@@ -57,11 +51,11 @@ The data pipeline is designed to seamlessly integrate data ingestion, transforma
 
 ## Tools and Services Used and their Functions
 
-* **Terraform**: To avoid manually cretating the resources which was used for this project, Terraform was used for Infrastructure as Code (IaC) to provision and manage cloud resources like AWS S3, Redshift, IAM roles, and VPC. This ensures scalability, consistency, and reproducibility in infrastructure deployment.
+* **Terraform**: To avoid manually creating the resources which was used for this project, Terraform was used for Infrastructure as Code (IaC) to provision and manage cloud resources like AWS S3, Redshift, IAM roles, and VPC. This ensures scalability, consistency, and reproducibility in infrastructure deployment.
 
 * **Docker**: Docker was used to containerize Airflow by building from an Apache Airflow Image found [here](https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html). A `Dockerfile` and a `requirement.txt` file were used to enhance the base image provided by Airflow to include `awswrangler` package.
 
-* **Airflow**: Airflow which is an open-source technology was used as an orchestration tool to automate and manage the ETL ppipeline. It had dag dependencies on the worker nodes set up to trigger at a scheduled interval which can be accesses on the web server GUI.
+* **Airflow**: Airflow which is an open-source technology was used as an orchestration tool to automate and manage the ETL pipeline. It had dag dependencies on the worker nodes set up to trigger at a scheduled interval which can be accesses on the web server GUI.
 
 * **AWS Service**: Because of its accessibility and compatibility with terraform, and ease of use, AWS cloud was chosen as the preferred cloud provider. An IAM with the necessary policies (using the principle of least-privilege) was provisoned and was used by Airflow for accessing the Data Lake (s3 bucket) and Data Warehouse (Redshift), using the access keys and secret access key parameters saved in the SSM parameter store. 
 
