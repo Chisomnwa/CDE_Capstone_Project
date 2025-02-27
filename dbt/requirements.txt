@@ -1,0 +1,4 @@
+dbt-core
+dbt-redshift
+
+travel-agency-cluster.cz8jk0qkbxey.af-south-1.redshift.amazonaws.com
