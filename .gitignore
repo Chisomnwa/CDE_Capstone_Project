@@ -3,9 +3,10 @@ logs
 plugins
 my_venv
 .env
+aws.py
 **.DS_Store**
 **__pycache__**
 **__init__.py**
 **terraform**
 my_venv/
-airflow/
+example/
