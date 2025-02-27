@@ -27,7 +27,7 @@ with DAG(
     description="A simple DAG to extract data from an API, load it to S3, transform it, and load it into Redshift",
     default_view="graph",
     tags=["travel_agency", "cde"],
-    # schedule_interval="@daily",
+    schedule_interval="@daily",
     catchup=False,
     template_searchpath=f"{dag_folder}/includes/sql",
 ) as dag:
