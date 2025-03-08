@@ -137,9 +137,7 @@ The data pipeline is designed to seamlessly integrate data ingestion, transforma
 **Scaling**: Extend the pipeline to integrate AWS Glue for more complex ETL processes
 
 
-
-
-
-
-
+# Power Point presentation
+To have a view of the project's data architecture and understand the ***Why** for the choice of tools 🛠️,
+you can access the power point slides [here](https://github.com/Chisomnwa/CDE_Capstone_Project/blob/main/Travel_Agency_Project_Slides.pdf).
 
