@@ -1,7 +1,6 @@
 config
 logs
 plugins
-my_venv
 .env
 aws.py
 **.DS_Store**
@@ -9,4 +8,3 @@ aws.py
 **__init__.py**
 **terraform**
 my_venv/
-example/
