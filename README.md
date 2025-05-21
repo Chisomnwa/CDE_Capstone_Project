@@ -142,6 +142,6 @@ To have a view of the project's data architecture and understand the **Why** for
 you can access the power point slides [here](https://github.com/Chisomnwa/CDE_Capstone_Project/blob/main/Travel_Agency_Project_Slides.pdf).
 
 # Medium Article
-Here's a medium article that I have written on this project. It gives the full view and the detailed steps on how to complete
+Here's a [medium article](https://medium.com/towards-data-engineering/how-i-built-a-travel-agency-data-platform-27e81a5dd668) that I have written on this project. It gives the full view and the detailed steps on how to complete
 this project. You will enjoy it.
 
