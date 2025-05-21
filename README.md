@@ -141,3 +141,7 @@ The data pipeline is designed to seamlessly integrate data ingestion, transforma
 To have a view of the project's data architecture and understand the **Why** for my choice of tools 🛠️,
 you can access the power point slides [here](https://github.com/Chisomnwa/CDE_Capstone_Project/blob/main/Travel_Agency_Project_Slides.pdf).
 
+# Medium Article
+Here's a medium article that I have written on this project. It gives the full view and the detailed steps on how to complete
+this project. You will enjoy it.
+
