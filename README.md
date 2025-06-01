@@ -1,4 +1,4 @@
-# CDE CAPSTONE PROJECT - Travel Agency Data Platform
+# Travel Agency Data Platform
 
 ## Introduction
 In response to the **CDE cohort-1** capstone project requirement, I created this project which integrates all the key concepts and tools learned during the Bootcamp program.
